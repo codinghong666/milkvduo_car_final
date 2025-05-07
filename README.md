@@ -1,30 +1,38 @@
-The smart car is based on the CV1800B chip. 
-With the memory up to 64MB, we can't run any python code in it efficently, acutually, only few MB memroy is avaible in it.
-So, all the code run on it is written by c or cpp.
 
-# Avoid 
-The fucking car use MPU6050 and VL53L0X to get the right angle and the distance.
-It can run in line even with the bad wheel. And it can turn to the angle of \pi /2  wonderfully.
+# Smart Car System (CV1800B-based)
 
-# Camera Track
-Duo to the fucking CV1800B chip and memory, the computer vision code is running on computer.
-It can track the people or any thing supported by yolov5.
+## Hardware Specifications
+- **Main Chip**: CV1800B 
+- **Memory**: 64MB total (only a few MB available for runtime)
+- **Sensors**:
+  - MPU6050 (IMU for angle detection)
+  - VL53L0X (Time-of-Flight distance sensor)
+  - 8-channel infrared array
+- **Constraints**: Limited resources require all onboard code to be written in C/C++ (Python not feasible)
 
-# Det
-8-channel infrared sensor
+## Core Capabilities
+1. **Precision Movement**:
+   - Accurate straight-line navigation even with imperfect wheels
+   - Precise 90° (π/2) turns
 
-# Line 
-run in line
+2. **Computer Vision** (Offloaded to external computer):
+   - Object/person tracking via YOLOv5
+   - Note: Run externally due to hardware limitations
 
-# MPU 
-code for mup6050
+3. **Line Following**: Robust black line tracking
 
-# Spdsen
-unfinished 
+## Code Modules
+- **MPU**: MPU6050 interface code
+- **Line**: Line-following implementation
+- **Det**: Infrared sensor processing
+- **Track**: Primary line tracking logic
+- **Spdsen** (WIP): Speed sensor module
+- **TDP**: Test module
 
-# TDP
-test for TDP
+## Limitations
+- No onboard computer vision processing
+- Memory constraints require optimized C/C++ code
+- Some modules still in development
 
-# Track
-track the black line
+
 
