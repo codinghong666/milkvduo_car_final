@@ -1,6 +1,6 @@
 
 # Smart Car System (CV1800B-based)
-
+[Smart Car System Video](https://www.bilibili.com/video/BV1sfVbzkEiZ/?spm_id_from=333.788.top_right_bar_window_history.content.click&vd_source=c5b468db8f118c8b57a0836611cf900f)
 ## Hardware Specifications
 - **Main Chip**: CV1800B 
 - **Memory**: 64MB total (only a few MB available for runtime)
